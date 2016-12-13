@@ -1,0 +1,83 @@
+
+<view class="container">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section" >
+        <view class="section-title">
+            <text>基本信息</text>
+        </view>
+        <view class="section-body">
+            <view class="row">
+                <text>昵称</text>
+                <input value="{{userInfo.nickName}}"/>
+            </view>
+            <view class="row">
+                <text>性别</text>
+                <text>{{sex[userInfo.gender]}}</text>
+            </view>
+            
+            <picker class="" bindchange="bindAgePickerChange" value="6" range="{{age.range}}">
+                <view class="row">
+                <text>年龄</text>
+                <text>{{age.range[age.index]}}</text>
+                </view>     
+            </picker>
+
+            <picker bindchange="bindEducationPickerChange" value="1" range="{{education.range}}">
+                <view  class="row" >
+                <text>学历</text>
+                <text>{{education.range[education.index]}}</text>
+                </view>
+            </picker>
+
+            <picker class="" bindchange="bindJobPickerChange" value="3" range="{{job.range}}">
+            <view class="row">
+                <text>职业</text>
+                <text>{{job.range[job.index]}}</text>
+            </view>
+            </picker>
+
+            <picker class="" bindchange="bindSalaryPickerChange" value="2" range="{{salary.range}}">
+            <view class="row">
+                <text>月收入</text>
+                <text>{{salary.range[salary.index]}}</text>
+            </view>
+            </picker>
+
+            <!--<picker class="" bindchange="bindFinancialPickerChange" value="1" range="{{financial.range}}">
+            <view class="row last-row">
+                <text>房车</text>
+                <text>{{financial.range[financial.index]}}</text>
+            </view>
+            </picker>-->
+
+        </view>
+
+
+    </view>
+
+    <view class="section">
+        <view class="section-title">
+            <text>我的兴趣</text>
+        </view>
+        <view class="section-body">
+            <view class="row" bindtap="tapSelectHobbies" >
+                <text>1</text>
+            </view>
+        </view>
+        
+    </view>
+
+
+
+    <view class="section">
+
+    
+
+        <view>
+            <button>下一步</button>
+        </view>
+
+    </view>
+    </form>
+
+</view>

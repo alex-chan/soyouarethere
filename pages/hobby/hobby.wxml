@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="table">
+        <view class="row" bindTap="newHobby">
+            新建兴趣爱好
+        </view>
+        <view  class="row" wx:for="{{hobby.range}}"> 
+            {{item}} 
+        </view>
+    </view>
+</view>
