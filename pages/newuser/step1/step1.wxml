@@ -61,7 +61,8 @@
         </view>
         <view class="section-body">
             <view class="row" bindtap="tapSelectHobbies" >
-                <text>1</text>
+                <view wx:if="{{selectedHobbies.length == 0}}">共同的兴趣是最好的开始...</view>
+                <text wx:if="{{selectedHobbies}}" wx:for="{{selectedHobbies}}" >{{item}}</text>
             </view>
         </view>
         
@@ -74,7 +75,7 @@
     
 
         <view>
-            <button>下一步</button>
+            <button bindtap="navToStep2">下一步</button>
         </view>
 
     </view>

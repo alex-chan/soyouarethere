@@ -2,9 +2,12 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/new/new",
+    "pages/newuser/step1/step1",
+    "pages/newuser/step2/step2",
+    "pages/newuser/step3/step3",
+    "pages/newuser/finalize/finalize",
     "pages/hobby/hobby",
-    "pages/newhobby/newhobby"
+    "pages/hobby/newhobby/newhobby"
   ],
   "window":{
     "backgroundTextStyle":"light",

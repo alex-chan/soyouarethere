@@ -1,0 +1,19 @@
+
+<icon type="info_circle"> </icon><text>上传几张高清的生活照片，可以充分展现你对生活的态度</text>
+
+<icon type="info_circle"> </icon><text>不要上传大头照、浓妆照、过度PS、低清晰度的照片</text>
+
+
+
+<view>
+    <view wx:for="{{imgUrls}}">
+         <image src="{{item}}"></image>
+    </view>
+
+    <button bindtap="chooseImage">选择图片</button>
+
+</view>
+
+<view>
+    <button bindtap="navToStep3">下一步</button>
+</view>

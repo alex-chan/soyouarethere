@@ -1,0 +1,16 @@
+<view>
+
+<button>预览</button>
+
+
+
+            <picker bindchange="bindDestoryPicker" value="3" range="{{distoryAfter.range}}">
+                <view  class="row" >
+                <text>定时销毁,过期后您可以手动重新复原</text>
+                <text>{{distoryAfter.range[distoryAfter.index]}}</text>
+                </view>
+            </picker>
+
+<button>发布</button>
+
+</view>

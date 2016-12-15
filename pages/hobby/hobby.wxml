@@ -1,10 +1,24 @@
 <view class="container">
-    <view class="table">
-        <view class="row" bindTap="newHobby">
+    <view class="section">
+        <!--<view class="row" bindtap="newHobby">
             新建兴趣爱好
+        </view>-->
+        <view class="section-body">
+    
+        <view data-index="{{index}}" bindtap="toggleHobby" class="row" wx:for="{{hobby.range}}">
+            <!--TODO:tap text no response -->
+            <text class="cell">{{item}}</text>
+            <icon  wx:if="{{! hobby.selected[index]}}" class="cell" type="success_no_circle" size="26" color="lightgray"/>
+            <icon wx:if="{{hobby.selected[index]}}" class="cell" type="success_no_circle" size="26" color=""/>
         </view>
-        <view  class="row" wx:for="{{hobby.range}}"> 
-            {{item}} 
+
+        </view>
+
+    
+    
+        <view>
+            <button bindtap="saveSelectedHobby">保存</button>
         </view>
     </view>
+
 </view>

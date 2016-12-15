@@ -1,0 +1,16 @@
+<icon type="info_circle"> </icon>
+<text>麻烦来了，这里需要你写下对单身、爱情的感悟，
+或者你对另一半的期许，或者任何你想倾诉的事情都可以，
+不需要像学生时代写作文那么长，但需要很用心，让人看到一个有温度的你</text>
+
+
+<view class="section">
+  <textarea bindblur="bindTextAreaBlur" 
+  auto-height placeholder="自动变高" 
+  placeholder-style="border:1px solid green;"
+  />
+</view>
+
+        <view>
+            <button bindtap="navToFinalize">完成并预览</button>
+        </view>

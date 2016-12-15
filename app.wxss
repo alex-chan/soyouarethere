@@ -8,3 +8,41 @@
   padding: 20rpx 0rpx;
   box-sizing: border-box;
 } 
+
+
+.container {
+    
+    background-color: #f6f5f1;
+}
+
+.container .section {
+
+  /*height: 100%;*/
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 20rpx 0 0 0;
+  box-sizing: border-box;
+
+}
+
+.container .section .section-title {
+    padding: 0 20rpx;
+}
+.container .section .section-body {
+    padding: 0 20rpx;
+    background-color: #FFFFFF;
+}
+
+.container .section .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    line-height: 86rpx;
+}
+/*
+.container .section .row.row-stretch {
+    justify-content: stretch;
+}*/

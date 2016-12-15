@@ -30,9 +30,10 @@ Page({
         index: -1,
         range: []
     },
-    hobby: {
-      range: ['徒步','健身','瑜伽','球类运动','看书','写诗/作画/书法','听音乐','摄影','看电影','钓鱼']
-    }
+    // hobby: {
+    //   range: ['徒步','健身','瑜伽','球类运动','看书','写诗/作画/书法','听音乐','摄影','看电影','钓鱼']
+    // }
+    selectedHobbies: []
   },
   onLoad: function(){
     var ages = [];
@@ -55,9 +56,34 @@ Page({
     });
     
   },
+
+  onShow: function(){
+     var hobbyStorage = wx.getStorageSync('hobbies');
+     if(hobbyStorage) {
+       this.setData({
+         selectedHobbies: hobbyStorage
+       })
+     }
+  },
+
+  navToStep2: function(){
+    wx.navigateTo({
+      url: '../step2/step2',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
   tapSelectHobbies: function(){
     wx.navigateTo({
-      url: '../hobby/hobby'
+      url: '../../hobby/hobby'
     })
   },
   bindAgePickerChange: function(e) {
