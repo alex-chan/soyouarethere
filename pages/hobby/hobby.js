@@ -1,6 +1,6 @@
 //hobby.js
 //获取应用实例
-var _ = require('../../utils/lodash.core.js');
+var _ = require('../../utils/lodash.core.min.js');
 var app = getApp();
 Page({
   data: {

@@ -8,35 +8,35 @@
         <view class="section-body">
             <view class="row">
                 <text>昵称</text>
-                <input value="{{userInfo.nickName}}"/>
+                <input name="nickName" value="{{userInfo.nickName}}"/>
             </view>
             <view class="row">
                 <text>性别</text>
                 <text>{{sex[userInfo.gender]}}</text>
             </view>
             
-            <picker class="" bindchange="bindAgePickerChange" value="6" range="{{age.range}}">
+            <picker name="age" class="" bindchange="bindAgePickerChange" value="6" range="{{age.range}}">
                 <view class="row">
                 <text>年龄</text>
                 <text>{{age.range[age.index]}}</text>
                 </view>     
             </picker>
 
-            <picker bindchange="bindEducationPickerChange" value="1" range="{{education.range}}">
+            <picker name="education" bindchange="bindEducationPickerChange" value="1" range="{{education.range}}">
                 <view  class="row" >
                 <text>学历</text>
                 <text>{{education.range[education.index]}}</text>
                 </view>
             </picker>
 
-            <picker class="" bindchange="bindJobPickerChange" value="3" range="{{job.range}}">
+            <picker name="job" class="" bindchange="bindJobPickerChange" value="3" range="{{job.range}}">
             <view class="row">
                 <text>职业</text>
                 <text>{{job.range[job.index]}}</text>
             </view>
             </picker>
 
-            <picker class="" bindchange="bindSalaryPickerChange" value="2" range="{{salary.range}}">
+            <picker name="salary" class="" bindchange="bindSalaryPickerChange" value="2" range="{{salary.range}}">
             <view class="row">
                 <text>月收入</text>
                 <text>{{salary.range[salary.index]}}</text>
@@ -75,7 +75,7 @@
     
 
         <view>
-            <button bindtap="navToStep2">下一步</button>
+            <button form-type="submit">下一步</button>
         </view>
 
     </view>

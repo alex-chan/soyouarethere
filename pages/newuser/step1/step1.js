@@ -66,19 +66,44 @@ Page({
      }
   },
 
-  navToStep2: function(){
-    wx.navigateTo({
-      url: '../step2/step2',
+  formSubmit: function(e){
+    
+    console.log(e);
+    // return;
+    var self = this;
+    wx.request({
+      url: 'https://icam.leanapp.cn/1.1/functions/updateUserInfo',
+      data: {
+         wxUserInfo: self.data.userInfo,
+         nickName: e.detail.value.nickName,
+         birthOfYear: (new Date()).getFullYear() - self.data.age.index,
+         education: self.data.education.range[self.data.education.index],
+         job: self.data.job.range[self.data.job.index],
+         salary: self.data.salary.range[self.data.salary.index],
+         hobbies: self.data.selectedHobbies
+      },
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: app.globalData.LC_HEADER, // 设置请求的 header
       success: function(res){
         // success
+        console.log('update user info success');
+        console.log(res);
+        wx.navigateTo({
+          url: '../step2/step2'});
       },
-      fail: function() {
+      fail: function(err) {
         // fail
+        console.log("update user info failed");
+        console.log(err);
+        wx.showToast({
+          title: err
+        });
       },
       complete: function() {
         // complete
       }
     })
+
   },
 
   tapSelectHobbies: function(){
