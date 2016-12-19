@@ -5,10 +5,18 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+    
+  },
+  getSessionToken: function(){
+    return wx.getStorageSync('sessionToken') || "";
+  },
+  setSessionToken: function(token){
+    wx.setStorageSync('sessionToken', token);
   },
   getUserInfo:function(cb){
     var that = this
-    if(this.globalData.userInfo){
+    if(this.globalData.userInfo && false){
       typeof cb == "function" && cb(this.globalData.userInfo)
     }else{
       //调用登录接口
@@ -28,6 +36,14 @@ App({
                 // success
                 console.log('success:');
                 console.log(res);
+
+                if( res.statusCode != 200 && res.statusCode != 201){
+                    wx.showToast({title: wx.data.error});
+                    return;
+                }
+
+                that.setSessionToken(res);
+
               },
               fail: function(err) {
                 // fail
@@ -54,6 +70,7 @@ App({
                 "X-LC-Id": "xkjj8zwzxiyouqo4m3war047dy40nfw0axxr10s0d85e6a9d",
                 "X-LC-Key": "20toct9i8jnyl7eperpl7o66puy9s2bzr70h2dq0rkoqvgt7",
                 "X-LC-Prod": 1
-    }
+    },
+    sessionToken: null
   }
 })
